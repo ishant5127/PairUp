@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Card Pair Matching - Leaderboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Leaderboard Page: Displays top scores, time taken, date/time, and play again button -->
+  <h1>Leaderboard</h1>
+  <table id="leaderboardTable">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Player</th>
+        <th>Score</th>
+        <th>Time</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Leaderboard rows added via JavaScript -->
+    </tbody>
+  </table>
+
+  <button id="playAgainBtn">Play Again</button>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tableBody = document.querySelector('#leaderboardTable tbody');
+      const scores = JSON.parse(localStorage.getItem('scores')) || [];
+
+      // Sort by highest score
+      scores.sort((a, b) => b.score - a.score);
+
+      // Populate table
+      scores.forEach((record, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${record.name}</td>
+          <td>${record.score}</td>
+          <td>${record.time}</td>
+          <td>${record.date}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+
+      // Play again button
+      document.getElementById('playAgainBtn').addEventListener('click', () => {
+        // Redirect to home page to start again
+        window.location.href = 'index.html';
+      });
+    });
+  </script>
+</body>
+</html>
