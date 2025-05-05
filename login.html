@@ -25,7 +25,7 @@
     
     .nav-links li a {
       text-decoration: none;
-    color: #c8b9fb;
+      color: #c8b9fb;
       font-weight: 500;
     }
     
@@ -84,12 +84,18 @@
   
   <script src="login-js.js"></script>
   <script>
-      // Logout button
+      // Logout button functionality
       document.getElementById('logoutBtn').addEventListener('click', () => {
-        // Add logout functionality - example: clear session data and redirect to login
-        localStorage.removeItem('currentUser'); // If you have a current user stored
-        window.location.href = 'test_signup.html'; // Redirect to login page
+        // Clear user session data from local storage
+        localStorage.removeItem('currentUser'); // Removes any stored user information
+        window.location.href = 'test_signup.html'; // Redirects to signup page after logout
       });
     </script>
 </body>
 </html>
+<!-- 
+  This file handles user authentication for the Card Matching Game.
+  It provides a simple login form that validates credentials against locally stored user data.
+  New users can navigate to the registration page, while existing users can log in to access the game.
+  The UI includes thematic elements that connect to the card-matching concept of the game.
+-->
