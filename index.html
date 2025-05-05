@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Card Pair Matching - Home</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" /> <!-- Ensures proper character encoding -->
+  <title>Card Pair Matching - Home</title> <!-- Page title displayed in browser tab -->
+  <link rel="stylesheet" href="style.css" /> <!-- Links to external CSS file for styling -->
 </head>
 <body>
-  <!-- Home Page: Allows player to input a name and start the game -->
+  <!-- 
+    Home Page: Allows player to input a name and start the game 
+    This is the entry point for users, where they input their name before playing
+  -->
   <div class="container home-page">
-    <h1>Welcome to Card Pair Matching Game</h1>
-    <label for="playerName">Enter Your Name</label>
-    <input type="text" id="playerName" placeholder="e.g., Player1" />
-    <button id="startBtn">Start Game</button>
+    <h1>Welcome to Card Pair Matching Game</h1> <!-- Main heading for the landing page -->
+    <label for="playerName">Enter Your Name</label> <!-- Label for accessibility -->
+    <input type="text" id="playerName" placeholder="e.g., Player1" /> <!-- Text input for player name, used for leaderboard -->
+    <button id="startBtn">Start Game</button> <!-- Button that initiates the game when clicked -->
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js"></script> <!-- Links to JavaScript file handling game logic and user interactions -->
 </body>
 </html>
+<!-- 
+  This file serves as the landing page for the Card Pair Matching game.
+  It collects the player's name which will be stored and displayed on the leaderboard.
+  Upon clicking "Start Game", the script.js file will handle navigation to the game page.
+-->
