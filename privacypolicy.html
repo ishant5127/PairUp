@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Card Pair Matching - Privacy Policy</title>
+  <link rel="stylesheet" href="test_style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Main container styling */
+    .container {
+      width: 70%;
+      max-width: 70%;
+      margin: 0 auto;
+      position: relative;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 40px;
+      margin-bottom: 40px;
+      transition: all 0.3s ease;
+    }
+    
+    .container:hover {
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      transform: translateY(-5px);
+    }
+    
+    .container::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #ff5f6d, #ffc371, #2af598, #009efd);
+      z-index: -1;
+      border-radius: 18px;
+      opacity: 0.5;
+      animation: borderGlow 4s linear infinite;
+    }
+    
+    /* Policy content styling */
+    .policy-content {
+      line-height: 1.6;
+    }
+    
+    .policy-content h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #fff;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .policy-content:hover h1 {
+      text-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+    }
+    
+    .policy-content h2 {
+      font-size: 1.5rem;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      color: #4facfe;
+      transition: all 0.3s ease;
+    }
+    
+    .policy-content h2:hover {
+      color: #00f2fe;
+      transform: translateX(5px);
+    }
+    
+    .policy-content p {
+      margin-bottom: 15px;
+      color: rgba(255, 255, 255, 0.8);
+      transition: all 0.3s ease;
+    }
+    
+    .policy-content:hover p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .policy-content ul {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+    
+    .policy-content li {
+      margin-bottom: 8px;
+      color: rgba(255, 255, 255, 0.8);
+      transition: all 0.3s ease;
+      list-style-type: none;
+      position: relative;
+      padding-left: 20px;
+    }
+    
+    .policy-content li:before {
+      content: "•";
+      color: #4facfe;
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .policy-content li:hover {
+      color: rgba(255, 255, 255, 1);
+      transform: translateX(5px);
+    }
+    
+    .policy-content li:hover:before {
+      color: #00f2fe;
+      transform: scale(1.5);
+    }
+    
+    .policy-content a {
+      color: #4facfe;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    
+    .policy-content a:hover {
+      color: #00f2fe;
+      text-decoration: none;
+      background-color: rgba(79, 172, 254, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .last-updated {
+      font-style: italic;
+      text-align: right;
+      margin-top: 30px;
+      color: rgba(255, 255, 255, 0.6);
+      transition: all 0.3s ease;
+    }
+    
+    .policy-content:hover .last-updated {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Footer styling */
+    /* Footer styling with enhanced hover effects */
+footer {
+  width: 100%;
+  background-color: rgba(15, 23, 42, 0.8);
+  color: #ecf0f1;
+  padding: 30px 0;
+  text-align: center;
+  position: relative;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff5f6d, #ffc371, #2af598, #009efd);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+footer:hover {
+  background-color: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
+  padding: 35px 0;
+  transform: translateY(-5px);
+}
+
+footer:hover::before {
+  opacity: 0.5;
+  animation: borderGlow 4s linear infinite;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+footer p {
+  margin: 10px 0;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+footer:hover p {
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+footer a {
+  color: #4facfe;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  padding: 8px 16px;
+  border-radius: 50px;
+  margin: 0 8px;
+  display: inline-block;
+  background: rgba(79, 172, 254, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+footer a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+}
+
+footer a:hover {
+  color: #00f2fe;
+  background: linear-gradient(90deg, rgba(79, 172, 254, 0.3), rgba(0, 242, 254, 0.3));
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.3);
+}
+
+footer a:hover::before {
+  animation: btnShine 1.5s;
+}
+
+/* Heart animation with enhanced effects */
+.heart {
+  display: inline-block;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: #ff5f6d;
+  text-shadow: 0 0 5px rgba(255, 95, 109, 0.5);
+}
+
+footer:hover .heart {
+  animation: heartBeat 1s ease infinite, float 3s ease-in-out infinite;
+  transform: translateY(-5px);
+  color: #ff2d55;
+  text-shadow: 0 0 15px rgba(255, 45, 85, 0.7);
+}
+
+/* Copyright year with subtle animation */
+.copyright {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+footer:hover .copyright {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  footer {
+    padding: 25px 0;
+  }
+  
+  footer:hover {
+    padding: 30px 0;
+  }
+  
+  footer a {
+    padding: 6px 12px;
+    margin: 0 5px;
+    font-size: 0.9rem;
+  }
+  
+  footer p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  footer a {
+    display: block;
+    margin: 8px auto;
+    max-width: 200px;
+  }
+}
+  </style>
+</head>
+<body>
+ 
+
+  <div class="container">
+    <div class="policy-content">
+      <h1>Privacy Policy</h1>
+      <p class="last-updated">Last Updated: June 10, 2025</p>
+      
+      <p>Thank you for playing Card Pair Matching ("the Game"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our game and related services.</p>
+      
+      <h2>1. Information We Collect</h2>
+      <p>We may collect the following types of information:</p>
+      <ul>
+        <li><strong>Account Information:</strong> When you register, we collect your username, email address, and password.</li>
+        <li><strong>Game Data:</strong> We collect your game progress, scores, and achievements.</li>
+        <li><strong>Device Information:</strong> We may collect device type, operating system, and browser information.</li>
+        <li><strong>Usage Data:</strong> We collect information about how you interact with our game.</li>
+      </ul>
+      
+      <h2>2. How We Use Your Information</h2>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Provide, operate, and maintain our game</li>
+        <li>Improve, personalize, and expand our game</li>
+        <li>Understand and analyze how you use our game</li>
+        <li>Develop new products, services, features, and functionality</li>
+        <li>Communicate with you for customer service and updates</li>
+      </ul>
+      
+      <h2>3. Data Sharing and Disclosure</h2>
+      <p>We do not sell your personal information. We may share information in these cases:</p>
+      <ul>
+        <li>With service providers who assist in game operation</li>
+        <li>When required by law or to protect rights</li>
+        <li>During business transfers (merger or acquisition)</li>
+      </ul>
+      
+      <h2>4. Data Security</h2>
+      <p>We implement appropriate security measures to protect your information. However, no internet transmission is 100% secure.</p>
+      
+      <h2>5. Children's Privacy</h2>
+      <p>Our game is not directed at children under 13. We do not knowingly collect information from children under 13.</p>
+      
+      <h2>6. Your Rights</h2>
+      <p>Depending on your location, you may have rights to:</p>
+      <ul>
+        <li>Access your personal data</li>
+        <li>Request correction or deletion</li>
+        <li>Object to processing</li>
+        <li>Request data portability</li>
+      </ul>
+      
+      <h2>7. Cookies and Tracking</h2>
+      <p>We use cookies to improve your experience. You can disable cookies in your browser settings.</p>
+      
+      <h2>8. Changes to This Policy</h2>
+      <p>We may update this policy periodically. We'll notify you of significant changes by posting the new policy on our website.</p>
+      
+      <h2>9. Contact Us</h2>
+      <p>If you have questions about this policy, contact us at:</p>
+      <p>Email: <a href="mailto:privacy@cardpairmatching.com">privacy@cardpairmatching.com</a></p>
+      <p>Mail: The Card Pair Matching Team, 123 Game Street, San Francisco, CA 94107</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 The Card Pair Matching Team. All rights reserved.</p>
+      <p>Designed with <span class="heart">❤️</span> in San Francisco, CA</p>
+      <p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="test_about.html">Back to About</a>
+      </p>
+    </div>
+  </footer>
+  
+  <script src="test_about.js"></script>
+</body>
+</html>
