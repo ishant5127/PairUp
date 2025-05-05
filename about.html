@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Card Pair Matching - About</title>
+  <link rel="stylesheet" href="test_style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Inline style to set container width to 70% */
+    .navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    z-index: 100;
+  }
+  
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #c8b9fb;
+    font-weight: 500;
+  }
+  
+  .nav-links li a:hover {
+    text-decoration: underline;
+  }
+    .container {
+      width: 70%;
+      max-width: 70%;
+      margin: 0 auto;
+      position: relative;
+    }
+    .container:hover{
+        color:black;
+    }
+    
+    /* Team members flex layout */
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    
+    .team-member {
+      flex: 1 1 calc(50% - 20px);
+      min-width: 250px;
+      color: #f9eeee;
+    }
+    .team-member:hover{
+        color:black;
+    }
+
+    /* New footer styles with glow effect */
+    footer {
+      width: 100%;
+      background-color: rgba(15, 23, 42, 0.8);
+      color: #ecf0f1;
+      padding: 40px 0;
+      margin-top: 40px;
+      position: relative;
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #ff5f6d, #ffc371, #2af598, #009efd);
+      z-index: -1;
+      opacity: 0.5;
+      animation: borderGlow 4s linear infinite;
+      transition: all 0.3s ease;
+    }
+    
+    footer:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    
+    footer:hover::before {
+      opacity: 0.7;
+    }
+    
+    .footer-container {
+      width: 70%;
+      max-width: 70%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      background: rgba(15, 23, 42, 0.8);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .footer-container::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #ff5f6d, #ffc371, #2af598, #009efd);
+      z-index: -1;
+      border-radius: 18px;
+      opacity: 0.5;
+      animation: borderGlow 4s linear infinite;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    
+    .footer-container:hover::before {
+      opacity: 0.7;
+    }
+    
+    footer a {
+      text-decoration: none;
+      color: #4facfe;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0 2px;
+    }
+    
+    footer a:hover {
+      color: #00f2fe;
+      text-decoration: none;
+    }
+    
+    footer a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    
+    footer a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    
+    footer p {
+      transition: all 0.3s ease;
+    }
+    
+    footer:hover p {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Keyframes for glow animation */
+    @keyframes borderGlow {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+    .about-section.cta a {
+  color: #c8b9fb; /* Change this to whatever color you like */
+  text-decoration: underline;
+  text-decoration: bold; /* Optional: removes the underline */
+}
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="test_index.html">Home</a></li>
+      <li><a href="test_about.html">About</a></li>
+      <li><a href="test_login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <div class="container about-page">
+    <h1>The Story Behind the Cards</h1>
+    
+    <section class="about-section story">
+      <h2>Our Memory Journey</h2>
+      <p>What started as a late-night coding challenge during a hackathon transformed into the game you're playing today. Card Pair Matching was born from our shared love of classic memory games and our desire to bring that experience online with a modern twist.</p>
+      <p>Every flip of a card represents our commitment to creating engaging, brain-stimulating entertainment that anyone can enjoy, regardless of age or gaming experience.</p>
+    </section>
+    
+    <section class="about-section game-philosophy">
+      <h2>More Than Just Cards</h2>
+      <p>Our matching game does more than entertain – it exercises your brain! Scientific studies show that memory games like ours can help:</p>
+      <ul>
+        <li>Improve concentration and attention to detail</li>
+        <li>Enhance short-term memory capabilities</li>
+        <li>Boost cognitive processing speed</li>
+        <li>Provide stress relief through focused play</li>
+      </ul>
+      <p>Challenge yourself daily to keep your mind sharp while having fun!</p>
+    </section>
+    
+    <section class="about-section team">
+      <h2>Meet Our Team</h2>
+      <p>Card Pair Matching was brought to life by a passionate group of developers, designers, and game enthusiasts:</p>
+      
+      <div class="team-members">
+        <div class="team-member">
+          <h3>Ishita Mahajan</h3>
+          <p class="role">Lead Developer & Game Mechanics</p>
+          <p>The coding wizard who transformed our ideas into interactive reality. Alex's background in cognitive psychology helped shape the game's difficulty progression.</p>
+        </div>
+        
+        <div class="team-member">
+          <h3>Harsh Goyal</h3>
+          <p class="role">UI/UX Designer</p>
+          <p>The creative eye behind our card designs and user interface. Maya ensures every visual element enhances your gaming experience while being accessible to all players.</p>
+        </div>
+        
+        
+        <div class="team-member">
+          <h3>Ishant Sharma</h3>
+          <p class="role">Game Testing & Quality Assurance</p>
+          <p>Our perfectionist who played thousands of matches to ensure balanced difficulty levels and bug-free gameplay. Sophie holds the internal record for fastest completion time!</p>
+        </div>
+        
+        <div class="team-member">
+          <h3>Moksha Goyal</h3>
+          <p class="role">Content & Community Coordinator</p>
+          <p>The friendly voice behind game updates and community events, making sure players always feel heard and part of the adventure.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section class="about-section future">
+      <h2>What's in the Cards for the Future?</h2>
+      <p>We're constantly shuffling the deck with new ideas! Coming soon:</p>
+      <ul>
+        <li><strong>Theme Packs:</strong> From space exploration to underwater adventures</li>
+        <li><strong>Challenge Mode:</strong> Daily puzzles with special twists</li>
+        <li><strong>Multiplayer Matches:</strong> Test your memory against friends</li>
+        <li><strong>Mobile App:</strong> Take the game wherever you go</li>
+        <li><strong>Accessibility Features:</strong> Making our game enjoyable for everyone</li>
+      </ul>
+    </section>
+    
+    <section class="about-section contact">
+      <h2>Connect With Us</h2>
+      <p>Found a bug? Have a suggestion? Just want to say hi? We'd love to hear from you!</p>
+      <p>Email: team@cardpairmatching.com</p>
+      <p>Follow us on social media @CardPairGame</p>
+    </section>
+    
+    <section class="about-section cta">
+      <h2>Ready to Test Your Memory?</h2>
+      <p>The cards are waiting to be flipped! <a href="test_signup.html">Sign up now</a> to start your memory-matching adventure and claim your spot on our leaderboard.</p>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 The Card Pair Matching Team. All rights reserved.</p>
+      <p>Designed with ❤️ and never ending passion...</p>
+      <p><a href="privacy-policy.html">Privacy Policy</a></p>
+    </div>
+  </footer>
+  
+  <script src="test_about.js"></script>
+</body>
+</html>
