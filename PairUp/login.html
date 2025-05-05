@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Card Pair Matching - Login</title>
+  <link rel="stylesheet" href="test_login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Inline styles for navbar positioning */
+    .navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px;
+      z-index: 100;
+    }
+    
+    .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
+    }
+    
+    .nav-links li a {
+      text-decoration: none;
+    color: #c8b9fb;
+      font-weight: 500;
+    }
+    
+    .nav-links li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="test_index.html">Home</a></li>
+      <li><a href="test_about.html">About</a></li>
+      <li><a href="test_login.html">Login</a></li>
+    </ul>
+  </nav>
+  <div class="container login-page">
+    <div class="card-icon">
+      <div class="card-inner">
+        <div class="card-front"></div>
+        <div class="card-back">🃏</div>
+      </div>
+    </div>
+    
+    <h1>Card Matching Game</h1>
+    <h2>Login to Play</h2>
+    
+    <form id="loginForm">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" required placeholder="Enter your username">
+      </div>
+      
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required placeholder="Enter your password">
+      </div>
+      
+      <div class="remember-me">
+        <input type="checkbox" id="remember">
+        <label for="remember">Remember me</label>
+      </div>
+      
+      <button type="submit" id="loginBtn">Login</button>
+      
+      <div class="form-footer">
+        <p>Don't have an account? <a href="test_signup.html" id="registerLink">Register</a></p>
+        <p><a href="#" id="logoutBtn">Logout</a></p>
+      </div>
+    </form>
+    
+    <div id="errorMessage" class="error-message"></div>
+  </div>
+  
+  <script src="test_login.js"></script>
+  <script>
+      // Logout button
+      document.getElementById('logoutBtn').addEventListener('click', () => {
+        // Add logout functionality - example: clear session data and redirect to login
+        localStorage.removeItem('currentUser'); // If you have a current user stored
+        window.location.href = 'test_signup.html'; // Redirect to login page
+      });
+    </script>
+</body>
+</html>
