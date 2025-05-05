@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Card Pair Matching - Leaderboard</title>
+  <link rel="stylesheet" href="test_style.css" />
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 20px;
+      position: relative;
+    }
+    
+    .corner-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+    
+    .corner-button {
+      padding: 8px 15px;
+      cursor: pointer;
+      background-color: #f2f2f2;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-top: 60px;  /* Added space for the corner buttons */
+    }
+    
+    #leaderboardTable {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 80%;
+      max-width: 800px;
+    }
+    
+    #leaderboardTable th, #leaderboardTable td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+    
+    #leaderboardTable th {
+      background-color: #f2f2f2;
+    }
+    
+    #playAgainBtn {
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      display: block;
+    }
+
+    /* Difficulty level styling */
+    .difficulty-easy {
+      color: #4CAF50;
+    }
+    
+    .difficulty-medium {
+      color: #2196F3;
+    }
+    
+    .difficulty-hard {
+      color: #f44336;
+    }
+  </style>
+</head>
+<body>
+  <!-- Corner buttons -->
+  <div class="corner-buttons">
+    <button id="backBtn" class="corner-button">Back</button>
+    <button id="logoutBtn" class="corner-button">Log Out</button>
+  </div>
+
+  <!-- Leaderboard Page: Displays top scores, time taken, date/time, and play again button -->
+  <h1>Leaderboard</h1>
+  <table id="leaderboardTable">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Player</th>
+        <th>Score</th>
+        <th>Difficulty</th>
+        <th>Pairs</th>
+        <th>Time</th>
+        <th>Moves</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Leaderboard rows added via JavaScript -->
+    </tbody>
+  </table>
+  
+  <button id="playAgainBtn">Play Again</button>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tableBody = document.querySelector('#leaderboardTable tbody');
+      const scores = JSON.parse(localStorage.getItem('scores')) || [];
+      
+      // Sort by highest score
+      scores.sort((a, b) => b.score - a.score);
+      
+      // Populate table
+      scores.forEach((record, index) => {
+        const row = document.createElement('tr');
+        
+        // Capitalize first letter of difficulty
+        let difficultyText = record.difficulty || 'medium';
+        difficultyText = difficultyText.charAt(0).toUpperCase() + difficultyText.slice(1);
+        
+        // Create difficulty cell with appropriate class
+        const difficultyCell = `<td class="difficulty-${record.difficulty || 'medium'}">${difficultyText}</td>`;
+        
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${record.name}</td>
+          <td>${record.score}</td>
+          ${difficultyCell}
+          <td>${record.pairs || '-'}</td>
+          <td>${record.time}</td>
+          <td>${record.moves || '-'}</td>
+          <td>${record.date}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+      
+      // Play again button
+      document.getElementById('playAgainBtn').addEventListener('click', () => {
+        // Redirect to home page to start again
+        window.location.href = 'test_game.html';
+      });
+      
+      // Back button - now redirects to newindex.html
+      document.getElementById('backBtn').addEventListener('click', () => {
+        window.location.href = 'test_index.html';
+      });
+      
+      // Logout button
+      document.getElementById('logoutBtn').addEventListener('click', () => {
+        // Add logout functionality - example: clear session data and redirect to login
+        localStorage.removeItem('currentUser'); // If you have a current user stored
+        window.location.href = 'test_login.html'; // Redirect to login page
+      });
+    });
+  </script>
+</body>
+</html>
