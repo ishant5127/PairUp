@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const userDataJson = localStorage.getItem(userKey);
           
           if (userDataJson) {
-            // Found user in individual storage
+            
             const userData = JSON.parse(userDataJson);
             
             if (userData.password === password) {
