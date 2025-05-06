@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const userData = JSON.parse(userDataJson);
             
             if (userData.password === password) {
-              // Login successful from individual storage
+             
               localStorage.setItem('currentUser', username);
               localStorage.setItem('playerName', userData.playerName);
               console.log('Login successful from individual storage');
