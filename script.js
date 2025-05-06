@@ -1,8 +1,6 @@
 
 document.getElementById('startBtn').addEventListener('click', () => {
-  // Retrieve the player's name from the input field
-  // The trim() method removes whitespace from both ends of the string
-  // This prevents submissions with only spaces
+
   const playerName = document.getElementById('playerName').value.trim();
   
   // Validate that the player has entered a name
