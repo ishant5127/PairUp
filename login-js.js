@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
               localStorage.setItem('currentUser', username);
               localStorage.setItem('playerName', userData.playerName);
               console.log('Login successful from individual storage');
-              window.location.href = 'test_game.html'; // Changed redirect to test_index.html
+              window.location.href = 'test_game.html'; 
               return;
             }
           }
