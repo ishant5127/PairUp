@@ -1,16 +1,4 @@
-/**
- * Signup Form Handler for Card Matching Game
- * ------------------------------------------
- * This script manages user registration for the Card Pair Matching game.
- * It handles form validation, user data storage, and navigation to the
- * login page after successful registration.
- * 
- * The registration system uses localStorage for user data storage in two ways:
- * 1. Individual user records with 'user_[username]' keys
- * 2. A consolidated 'users' object containing all registered users
- * 
- * This dual approach provides redundancy and faster lookup options.
- */
+
 
 // Wait for DOM to be fully loaded before attaching event handlers
 document.addEventListener('DOMContentLoaded', function() {
@@ -129,17 +117,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-/**
- * Security Considerations:
- * -----------------------
- * 1. This implementation uses localStorage which is not secure for sensitive data
- * 2. Passwords are stored in plaintext - in production, use proper hashing
- * 3. No protection against username conflicts beyond simple validation
- * 4. Limited validation of input data
- * 
- * For a production application, consider:
- * - Using server-side user management
- * - Implementing secure password hashing (bcrypt/Argon2)
- * - Adding more robust input validation and sanitization
- * - Using HTTPS for all data transmission
- */
