@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         try {
-          // First try to find the user in the individual user record
           const userKey = 'user_' + username;
           const userDataJson = localStorage.getItem(userKey);
           
