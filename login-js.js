@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const users = JSON.parse(usersJson);
             
             if (users[username] && users[username].password === password) {
-              // Login successful from users collection
+            
               localStorage.setItem('currentUser', username);
               localStorage.setItem('playerName', users[username].playerName);
               console.log('Login successful from users collection');
