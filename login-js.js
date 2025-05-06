@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
       loginForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Clear previous errors
+        
         errorMessage.style.display = 'none';
         
         // Get input values
