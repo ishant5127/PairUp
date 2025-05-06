@@ -11,9 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     highlightCurrentNav();
 });
 
-/**
- * Check if a user is currently logged in and update UI accordingly
- */
+
 function checkUserLoggedIn() {
     // Get user info from localStorage if it exists
     const currentUser = localStorage.getItem('currentUser');
