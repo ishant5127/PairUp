@@ -241,7 +241,7 @@
     animation: shake 0.5s;
   }
   
-  /* Responsive design */
+  
   @media (max-width: 480px) {
     .container {
       padding: 30px 20px;
