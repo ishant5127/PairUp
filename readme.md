@@ -24,7 +24,8 @@ A fully responsive and visually engaging **Card Pair Matching Game** built using
 3. If cards match, they stay open. If not, they flip back.
 4. Complete the game as fast as possible to score higher.
 5. After finishing, view your rank on the leaderboard.
-
+ 
+ 
 ---
 
 
