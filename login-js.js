@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         errorMessage.style.display = 'none';
         
-        // Get input values
         const username = usernameInput.value.trim();
         const password = passwordInput.value.trim();
         
