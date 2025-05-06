@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
               localStorage.setItem('currentUser', username);
               localStorage.setItem('playerName', users[username].playerName);
               console.log('Login successful from users collection');
-              window.location.href = 'test_game.html'; // Changed redirect to test_index.html
+              window.location.href = 'test_game.html'; 
               return;
             }
           }
