@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Card Pair Matching - Privacy Policy</title>
-  <link rel="stylesheet" href="newcss.css" />
+  <meta charset="UTF-8" /> <!-- Ensures proper character encoding -->
+  <title>Card Pair Matching - Privacy Policy</title> <!-- Page title shown in browser tab -->
+  <link rel="stylesheet" href="newcss.css" /> <!-- Link to main stylesheet -->
+  <!-- Google Fonts integration for typography - Poppins font family with various weights -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on mobile devices -->
   <style>
-    /* Main container styling */
+    /* Main container styling - Creates a floating card-like appearance with visual effects */
     .container {
       width: 70%;
       max-width: 70%;
       margin: 0 auto;
       position: relative;
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(10px);
+      background: rgba(15, 23, 42, 0.8); /* Semi-transparent dark background */
+      backdrop-filter: blur(10px); /* Creates frosted glass effect */
       border-radius: 16px;
       padding: 40px;
       box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.1);
       margin-top: 40px;
       margin-bottom: 40px;
-      transition: all 0.3s ease;
+      transition: all 0.3s ease; /* Smooth transition for hover effects */
     }
     
+    /* Subtle lift effect on hover to enhance interactivity */
     .container:hover {
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
       transform: translateY(-5px);
     }
     
+    /* Decorative gradient border that surrounds the container */
+    /* Using pseudo-element to create the effect without affecting layout */
     .container::before {
       content: '';
       position: absolute;
@@ -36,18 +40,19 @@
       left: -2px;
       right: -2px;
       bottom: -2px;
-      background: linear-gradient(45deg, #ff5f6d, #ffc371, #2af598, #009efd);
+      background: linear-gradient(45deg, #ff5f6d, #ffc371, #2af598, #009efd); /* Colorful gradient */
       z-index: -1;
       border-radius: 18px;
       opacity: 0.5;
-      animation: borderGlow 4s linear infinite;
+      animation: borderGlow 4s linear infinite; /* Subtle animation */
     }
     
-    /* Policy content styling */
+    /* Policy content text styling for readability and visual hierarchy */
     .policy-content {
-      line-height: 1.6;
+      line-height: 1.6; /* Improved line spacing for better readability */
     }
     
+    /* Main title styling */
     .policy-content h1 {
       font-size: 2rem;
       margin-bottom: 20px;
@@ -56,73 +61,85 @@
       transition: all 0.3s ease;
     }
     
+    /* Hover effect for main title - adds glow */
     .policy-content:hover h1 {
       text-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
     }
     
+    /* Section headers styling */
     .policy-content h2 {
       font-size: 1.5rem;
       margin-top: 30px;
       margin-bottom: 15px;
-      color: #4facfe;
+      color: #4facfe; /* Brand color for headings */
       transition: all 0.3s ease;
     }
     
+    /* Section headers hover effect - subtle slide and color change */
     .policy-content h2:hover {
       color: #00f2fe;
       transform: translateX(5px);
     }
     
+    /* Paragraph text styling */
     .policy-content p {
       margin-bottom: 15px;
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.8); /* Slightly dimmed for better contrast with headings */
       transition: all 0.3s ease;
     }
     
+    /* Paragraph hover effect - slight brightening for focus */
     .policy-content:hover p {
       color: rgba(255, 255, 255, 0.9);
     }
     
+    /* List container styling */
     .policy-content ul {
       margin-bottom: 20px;
       padding-left: 20px;
     }
     
+    /* List item styling with custom bullets */
     .policy-content li {
       margin-bottom: 8px;
       color: rgba(255, 255, 255, 0.8);
       transition: all 0.3s ease;
-      list-style-type: none;
+      list-style-type: none; /* Remove default bullets */
       position: relative;
       padding-left: 20px;
     }
     
+    /* Custom colored bullet points using pseudo-elements */
     .policy-content li:before {
       content: "•";
-      color: #4facfe;
+      color: #4facfe; /* Brand color for bullets */
       position: absolute;
       left: 0;
       transition: all 0.3s ease;
     }
     
+    /* List item hover effects - sliding and brightening */
     .policy-content li:hover {
       color: rgba(255, 255, 255, 1);
       transform: translateX(5px);
     }
     
+    /* Custom bullet hover effect - scaling for emphasis */
     .policy-content li:hover:before {
       color: #00f2fe;
       transform: scale(1.5);
     }
     
+    /* Link styling within policy text */
     .policy-content a {
-      color: #4facfe;
+      color: #4facfe; /* Brand color for links */
       text-decoration: none;
       transition: all 0.3s ease;
       padding: 2px 4px;
       border-radius: 4px;
     }
     
+    /* Link hover effects - background highlight and subtle lift */
     .policy-content a:hover {
       color: #00f2fe;
       text-decoration: none;
@@ -130,6 +147,7 @@
       transform: translateY(-2px);
     }
     
+    /* Last updated timestamp styling */
     .last-updated {
       font-style: italic;
       text-align: right;
@@ -138,187 +156,207 @@
       transition: all 0.3s ease;
     }
     
+    /* Last updated timestamp hover effect */
     .policy-content:hover .last-updated {
       color: rgba(255, 255, 255, 0.8);
     }
     
-    /* Footer styling */
-    /* Footer styling with enhanced hover effects */
-footer {
-  width: 100%;
-  background-color: rgba(15, 23, 42, 0.8);
-  color: #ecf0f1;
-  padding: 30px 0;
-  text-align: center;
-  position: relative;
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  z-index: 10;
-}
+    /* Footer styling with enhanced visual effects */
+    footer {
+      width: 100%;
+      background-color: rgba(15, 23, 42, 0.8); /* Semi-transparent dark background */
+      color: #ecf0f1;
+      padding: 30px 0;
+      text-align: center;
+      position: relative;
+      backdrop-filter: blur(10px); /* Creates frosted glass effect */
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy animation curve */
+      z-index: 10;
+    }
 
-footer::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #ff5f6d, #ffc371, #2af598, #009efd);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
+    /* Decorative gradient border for footer using pseudo-element */
+    footer::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #ff5f6d, #ffc371, #2af598, #009efd);
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
 
-footer:hover {
-  background-color: rgba(15, 23, 42, 0.95);
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
-  padding: 35px 0;
-  transform: translateY(-5px);
-}
+    /* Footer hover effects - lifting, darkening, and revealing gradient border */
+    footer:hover {
+      background-color: rgba(15, 23, 42, 0.95);
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
+      padding: 35px 0;
+      transform: translateY(-5px);
+    }
 
-footer:hover::before {
-  opacity: 0.5;
-  animation: borderGlow 4s linear infinite;
-}
+    /* Animate gradient border on footer hover */
+    footer:hover::before {
+      opacity: 0.5;
+      animation: borderGlow 4s linear infinite;
+    }
 
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+    /* Footer content container */
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-footer p {
-  margin: 10px 0;
-  color: rgba(255, 255, 255, 0.8);
-  transition: all 0.3s ease;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
+    /* Footer text styling */
+    footer p {
+      margin: 10px 0;
+      color: rgba(255, 255, 255, 0.8);
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
 
-footer:hover p {
-  color: rgba(255, 255, 255, 1);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
+    /* Footer text hover effect - brightening */
+    footer:hover p {
+      color: rgba(255, 255, 255, 1);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
 
-footer a {
-  color: #4facfe;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  padding: 8px 16px;
-  border-radius: 50px;
-  margin: 0 8px;
-  display: inline-block;
-  background: rgba(79, 172, 254, 0.1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-}
+    /* Footer navigation links styling */
+    footer a {
+      color: #4facfe;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      padding: 8px 16px;
+      border-radius: 50px;
+      margin: 0 8px;
+      display: inline-block;
+      background: rgba(79, 172, 254, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
 
-footer a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transform: translateX(-100%);
-}
+    /* Shine effect for footer links using pseudo-element */
+    footer a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transform: translateX(-100%);
+    }
 
-footer a:hover {
-  color: #00f2fe;
-  background: linear-gradient(90deg, rgba(79, 172, 254, 0.3), rgba(0, 242, 254, 0.3));
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.3);
-}
+    /* Footer link hover effects - gradient background, lifting, and shadow */
+    footer a:hover {
+      color: #00f2fe;
+      background: linear-gradient(90deg, rgba(79, 172, 254, 0.3), rgba(0, 242, 254, 0.3));
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 242, 254, 0.3);
+    }
 
-footer a:hover::before {
-  animation: btnShine 1.5s;
-}
+    /* Animate shine effect on footer link hover */
+    footer a:hover::before {
+      animation: btnShine 1.5s;
+    }
 
-/* Heart animation with enhanced effects */
-.heart {
-  display: inline-block;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  color: #ff5f6d;
-  text-shadow: 0 0 5px rgba(255, 95, 109, 0.5);
-}
+    /* Heart icon styling with animation */
+    .heart {
+      display: inline-block;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      color: #ff5f6d;
+      text-shadow: 0 0 5px rgba(255, 95, 109, 0.5);
+    }
 
-footer:hover .heart {
-  animation: heartBeat 1s ease infinite, float 3s ease-in-out infinite;
-  transform: translateY(-5px);
-  color: #ff2d55;
-  text-shadow: 0 0 15px rgba(255, 45, 85, 0.7);
-}
+    /* Heart icon hover animations - beating and floating effect */
+    footer:hover .heart {
+      animation: heartBeat 1s ease infinite, float 3s ease-in-out infinite;
+      transform: translateY(-5px);
+      color: #ff2d55;
+      text-shadow: 0 0 15px rgba(255, 45, 85, 0.7);
+    }
 
-/* Copyright year with subtle animation */
-.copyright {
-  display: inline-block;
-  transition: all 0.3s ease;
-}
+    /* Copyright year with subtle animation */
+    .copyright {
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
 
-footer:hover .copyright {
-  animation: pulse 2s infinite;
-}
+    /* Pulsing animation for copyright on footer hover */
+    footer:hover .copyright {
+      animation: pulse 2s infinite;
+    }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
+    /* Keyframe animation for pulsing effect */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  footer {
-    padding: 25px 0;
-  }
-  
-  footer:hover {
-    padding: 30px 0;
-  }
-  
-  footer a {
-    padding: 6px 12px;
-    margin: 0 5px;
-    font-size: 0.9rem;
-  }
-  
-  footer p {
-    font-size: 0.95rem;
-  }
-}
+    /* Responsive adjustments for tablets */
+    @media (max-width: 768px) {
+      footer {
+        padding: 25px 0;
+      }
+      
+      footer:hover {
+        padding: 30px 0;
+      }
+      
+      footer a {
+        padding: 6px 12px;
+        margin: 0 5px;
+        font-size: 0.9rem;
+      }
+      
+      footer p {
+        font-size: 0.95rem;
+      }
+    }
 
-@media (max-width: 480px) {
-  footer a {
-    display: block;
-    margin: 8px auto;
-    max-width: 200px;
-  }
-}
+    /* Responsive adjustments for mobile phones */
+    @media (max-width: 480px) {
+      footer a {
+        display: block;
+        margin: 8px auto;
+        max-width: 200px;
+      }
+    }
   </style>
 </head>
 <body>
- 
-
+  <!-- Main content container with frosted glass effect -->
   <div class="container">
+    <!-- Privacy policy content section with interactive elements -->
     <div class="policy-content">
       <h1>Privacy Policy</h1>
+      <!-- Timestamp showing when policy was last updated -->
       <p class="last-updated">Last Updated: June 10, 2025</p>
       
+      <!-- Introduction paragraph explaining the purpose of the policy -->
       <p>Thank you for playing Card Pair Matching ("the Game"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our game and related services.</p>
       
+      <!-- Section 1: Information collection practices -->
       <h2>1. Information We Collect</h2>
       <p>We may collect the following types of information:</p>
       <ul>
+        <!-- List of data types collected with explanations -->
         <li><strong>Account Information:</strong> When you register, we collect your username, email address, and password.</li>
         <li><strong>Game Data:</strong> We collect your game progress, scores, and achievements.</li>
         <li><strong>Device Information:</strong> We may collect device type, operating system, and browser information.</li>
         <li><strong>Usage Data:</strong> We collect information about how you interact with our game.</li>
       </ul>
       
+      <!-- Section 2: Data usage purposes -->
       <h2>2. How We Use Your Information</h2>
       <p>We use the information we collect to:</p>
       <ul>
+        <!-- List of how collected data is used -->
         <li>Provide, operate, and maintain our game</li>
         <li>Improve, personalize, and expand our game</li>
         <li>Understand and analyze how you use our game</li>
@@ -326,35 +364,44 @@ footer:hover .copyright {
         <li>Communicate with you for customer service and updates</li>
       </ul>
       
+      <!-- Section 3: Information sharing practices -->
       <h2>3. Data Sharing and Disclosure</h2>
       <p>We do not sell your personal information. We may share information in these cases:</p>
       <ul>
+        <!-- Cases where data might be shared with third parties -->
         <li>With service providers who assist in game operation</li>
         <li>When required by law or to protect rights</li>
         <li>During business transfers (merger or acquisition)</li>
       </ul>
       
+      <!-- Section 4: Security measures -->
       <h2>4. Data Security</h2>
       <p>We implement appropriate security measures to protect your information. However, no internet transmission is 100% secure.</p>
       
+      <!-- Section 5: COPPA compliance -->
       <h2>5. Children's Privacy</h2>
       <p>Our game is not directed at children under 13. We do not knowingly collect information from children under 13.</p>
       
+      <!-- Section 6: User rights regarding personal data -->
       <h2>6. Your Rights</h2>
       <p>Depending on your location, you may have rights to:</p>
       <ul>
+        <!-- List of data privacy rights (GDPR/CCPA compliance) -->
         <li>Access your personal data</li>
         <li>Request correction or deletion</li>
         <li>Object to processing</li>
         <li>Request data portability</li>
       </ul>
       
+      <!-- Section 7: Cookie usage -->
       <h2>7. Cookies and Tracking</h2>
       <p>We use cookies to improve your experience. You can disable cookies in your browser settings.</p>
       
+      <!-- Section 8: Policy updates -->
       <h2>8. Changes to This Policy</h2>
       <p>We may update this policy periodically. We'll notify you of significant changes by posting the new policy on our website.</p>
       
+      <!-- Section 9: Contact information -->
       <h2>9. Contact Us</h2>
       <p>If you have questions about this policy, contact us at:</p>
       <p>Email: <a href="mailto:privacy@cardpairmatching.com">privacy@cardpairmatching.com</a></p>
@@ -362,17 +409,28 @@ footer:hover .copyright {
     </div>
   </div>
 
+  <!-- Footer section with navigation links and copyright information -->
   <footer>
     <div class="footer-container">
+      <!-- Copyright notice with current year -->
       <p>&copy; 2025 The Card Pair Matching Team. All rights reserved.</p>
+      <!-- Location info with animated heart icon -->
       <p>Designed with <span class="heart">❤️</span> in San Francisco, CA</p>
+      <!-- Navigation links to key pages -->
       <p>
-        <a href="privacypolicy.html">Privacy Policy</a>
-        <a href="about.html">Back to About</a>
+        <a href="privacypolicy.html">Privacy Policy</a> <!-- Current page link for reference -->
+        <a href="about.html">Back to About</a> <!-- Navigation back to about page -->
       </p>
     </div>
   </footer>
   
+  <!-- JavaScript file for any additional functionality -->
   <script src="about.js"></script>
 </body>
 </html>
+<!-- 
+  This Privacy Policy page serves as a legal document outlining how user data is handled.
+  It features a clean, modern design with interactive elements to improve readability.
+  The frosted glass effect and subtle animations enhance the user experience while
+  maintaining the serious nature of the content.
+-->
