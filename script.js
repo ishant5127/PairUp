@@ -1,6 +1,4 @@
 
-
-// Add click event listener to the start button that executes when clicked
 document.getElementById('startBtn').addEventListener('click', () => {
   // Retrieve the player's name from the input field
   // The trim() method removes whitespace from both ends of the string
