@@ -117,3 +117,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+/**
+ * Security Considerations:
+ * -----------------------
+ * 1. This implementation uses localStorage which is not secure for sensitive data
+ * 2. Passwords are stored in plaintext - in production, use proper hashing
+ * 3. No protection against username conflicts beyond simple validation
+ * 4. Limited validation of input data
+ * 
+ * For a production application, consider:
+ * - Using server-side user management
+ * - Implementing secure password hashing (bcrypt/Argon2)
+ * - Adding more robust input validation and sanitization
+ * - Using HTTPS for all data transmission
+ */
