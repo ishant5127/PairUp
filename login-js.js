@@ -65,12 +65,17 @@ document.addEventListener('DOMContentLoaded', function() {
           const userDataJson = localStorage.getItem(userKey);
           
           if (userDataJson) {
+<<<<<<< HEAD
             // User found in individual storage, parse the JSON data
+=======
+            
+>>>>>>> Ishita
             const userData = JSON.parse(userDataJson);
             
             // Simple password verification
             // NOTE: In production, passwords should be hashed, not stored as plaintext
             if (userData.password === password) {
+<<<<<<< HEAD
               // Authentication successful - set session data
               localStorage.setItem('currentUser', username);
               localStorage.setItem('playerName', userData.playerName);
@@ -84,12 +89,25 @@ document.addEventListener('DOMContentLoaded', function() {
           
           // If user not found in individual storage, check the main users collection
           // This is a fallback lookup mechanism
+=======
+             
+              localStorage.setItem('currentUser', username);
+              localStorage.setItem('playerName', userData.playerName);
+              console.log('Login successful from individual storage');
+              window.location.href = 'test_game.html'; 
+              return;
+            }
+          }
+          
+        
+>>>>>>> Ishita
           const usersJson = localStorage.getItem('users');
           if (usersJson) {
             const users = JSON.parse(usersJson);
             
             // Check if username exists and password matches
             if (users[username] && users[username].password === password) {
+<<<<<<< HEAD
               // Authentication successful from main users collection
               localStorage.setItem('currentUser', username);
               localStorage.setItem('playerName', users[username].playerName);
@@ -103,6 +121,18 @@ document.addEventListener('DOMContentLoaded', function() {
           
           // If execution reaches here, authentication has failed
           // Either username doesn't exist or password is incorrect
+=======
+            
+              localStorage.setItem('currentUser', username);
+              localStorage.setItem('playerName', users[username].playerName);
+              console.log('Login successful from users collection');
+              window.location.href = 'test_game.html'; 
+              return;
+            }
+          }
+          
+    
+>>>>>>> Ishita
           showError('Invalid username or password');
           
         } catch (error) {
