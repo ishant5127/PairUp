@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Card Pair Matching - Game</title>
-  <link rel="stylesheet" href="test_style.css" />
+  <meta charset="UTF-8" /> <!-- Ensures proper text encoding across browsers -->
+  <title>Card Pair Matching - Game</title> <!-- Browser tab title -->
+  <link rel="stylesheet" href="test_style.css" /> <!-- External stylesheet for main styling -->
   <style>
+    /* Back navigation button styling - positioned in top-left corner for easy access */
     .back-button {
       position: absolute;
       top: 10px;
@@ -18,15 +19,19 @@
       font-size: 16px;
     }
     
+    /* Hover effect for better user feedback when mouse is over the back button */
     .back-button:hover {
       background-color: #333333;
     }
     
+    /* Header positioning allows room for the back button */
     header {
       position: relative;
       padding-top: 10px;
     }
 
+    /* Game options panel styling - contains difficulty and pair count selectors */
+    /* Semi-transparent background helps it blend with the page theme */
     .game-options {
       margin: 20px auto;
       max-width: 600px;
@@ -34,24 +39,28 @@
       padding: 15px;
       background-color: rgba(79, 75, 75, 0.1);
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
     }
 
+    /* Each row in the options panel */
     .options-group {
       margin-bottom: 10px;
     }
 
+    /* Labels for the dropdown menus */
     .options-group label {
       font-weight: bold;
       margin-right: 10px;
     }
 
+    /* Dropdown styling for game configuration options */
     .options-group select {
       padding: 6px 10px;
       border-radius: 4px;
       border: 1px solid #ccc;
     }
 
+    /* Start button styling - green suggests "go" or "start" */
     .start-button {
       background-color: #4CAF50;
       color: white;
@@ -63,48 +72,75 @@
       margin-top: 10px;
     }
 
+    /* Hover effect for the start button */
     .start-button:hover {
       background-color: #45a049;
     }
   </style>
 </head>
 <body>
-  <!-- Game Page: Displays the card grid, score, timer, moves counter -->
+  <!-- 
+    Game Page Header:
+    - Back button for navigation to home
+    - Player information display area
+    - Game statistics (timer and moves counter)
+  -->
   <header>
     <button class="back-button" onclick="window.location.href='test_index.html'">← Back</button>
     <div class="player-info">
-      <span id="displayName">Player</span>
-      <span id="timer">00:00</span>
-      <span id="movesCounter">Moves: 0</span>
+      <span id="displayName">Player</span> <!-- Populated dynamically with player's name -->
+      <span id="timer">00:00</span> <!-- Live timer counting gameplay duration -->
+      <span id="movesCounter">Moves: 0</span> <!-- Tracks number of card flips attempted -->
     </div>
   </header>
 
+  <!-- 
+    Game Configuration Panel:
+    - Allows player to select difficulty level before starting
+    - Offers different numbers of card pairs to match
+    - Initially visible; hidden once game starts
+  -->
   <div class="game-options" id="gameOptions">
     <div class="options-group">
       <label for="difficultySelect">Difficulty:</label>
       <select id="difficultySelect">
-        <option value="easy">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
+        <option value="easy">Easy</option> <!-- Longer card display time, lower score multiplier -->
+        <option value="medium">Medium</option> <!-- Balanced difficulty for average players -->
+        <option value="hard">Hard</option> <!-- Brief card display time, higher score multiplier -->
       </select>
     </div>
     <div class="options-group">
       <label for="pairsSelect">Number of Pairs:</label>
       <select id="pairsSelect">
-        <option value="6">6 Pairs</option>
-        <option value="8">8 Pairs</option>
-        <option value="10">10 Pairs</option>
+        <option value="6">6 Pairs</option> <!-- Smallest grid (12 cards total) -->
+        <option value="8">8 Pairs</option> <!-- Medium grid (16 cards total) -->
+        <option value="10">10 Pairs</option> <!-- Largest grid (20 cards total) -->
       </select>
     </div>
-    <button class="start-button" id="startGameButton">Start Game</button>
+    <button class="start-button" id="startGameButton">Start Game</button> <!-- Initializes the game with selected options -->
   </div>
 
+ 
   <main>
     <div class="card-grid" id="cardGrid" style="display: none;">
       <!-- Cards will be dynamically inserted by JavaScript -->
+      <!-- Each card will have front/back faces with matching symbols/images -->
     </div>
   </main>
 
+  <!-- Game script handles card generation, game logic, and scoring -->
   <script src="test_game.js"></script>
 </body>
 </html>
+<!-- 
+  This file serves as the game screen for the Card Pair Matching application.
+  
+  Game flow:
+  1. Player selects difficulty level and number of pairs
+  2. Player clicks "Start Game" button
+  3. Game options panel hides and card grid appears
+  4. Player attempts to find matching pairs of cards
+  5. Game tracks time elapsed and number of moves
+  6. When all pairs are matched, player's score is calculated
+  7. Score is saved to leaderboard and player is redirected
+-->

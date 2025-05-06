@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Card Pair Matching - Game</title>
-  <link rel="stylesheet" href="newcss.css" />
+  <meta charset="UTF-8" /> <!-- Ensures proper character encoding -->
+  <title>Card Pair Matching - Game</title> <!-- Title displayed in browser tab -->
+  <link rel="stylesheet" href="newcss.css" /> <!-- Link to main stylesheet -->
   <style>
+    /* Back button styling - positioned at top left for easy navigation */
     .back-button {
       position: absolute;
       top: 10px;
@@ -18,42 +19,49 @@
       font-size: 16px;
     }
     
+    /* Hover effect provides visual feedback when user interacts with button */
     .back-button:hover {
       background-color: #333333;
     }
     
+    /* Header positioning accounts for the back button */
     header {
       position: relative;
       padding-top: 10px;
     }
 
+    /* Game options panel contains difficulty and pair count selectors */
     .game-options {
       margin: 20px auto;
       max-width: 600px;
       text-align: center;
       padding: 15px;
-      background-color: rgba(79, 75, 75, 0.1);
+      background-color: rgba(79, 75, 75, 0.1); /* Semi-transparent for better theme integration */
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
     }
 
+    /* Each row in the options panel */
     .options-group {
       margin-bottom: 10px;
     }
 
+    /* Option label styling for better readability */
     .options-group label {
       font-weight: bold;
       margin-right: 10px;
     }
 
+    /* Dropdown styling for difficulty and pair count selection */
     .options-group select {
       padding: 6px 10px;
       border-radius: 4px;
       border: 1px solid #ccc;
     }
 
+    /* Start button uses green to indicate positive action */
     .start-button {
-      background-color: #4CAF50;
+      background-color: #4CAF50; /* Green suggests "go" or "start" */
       color: white;
       padding: 10px 20px;
       border: none;
@@ -63,47 +71,52 @@
       margin-top: 10px;
     }
 
+    /* Hover effect for start button */
     .start-button:hover {
       background-color: #45a049;
     }
   </style>
 </head>
 <body>
+  <!-- Header section contains navigation and player information display -->
   <header>
     <button class="back-button" onclick="window.location.href='index.html'">← Back</button>
     <div class="player-info">
-      <span id="displayName">Player</span>
-      <span id="timer">00:00</span>
-      <span id="movesCounter">Moves: 0</span>
+      <span id="displayName">Player</span> <!-- Shows player name from localStorage -->
+      <span id="timer">00:00</span> <!-- Timer counts gameplay duration -->
+      <span id="movesCounter">Moves: 0</span> <!-- Tracks number of card flips -->
     </div>
   </header>
 
+  <!-- Game configuration panel - shown before gameplay starts -->
   <div class="game-options" id="gameOptions">
     <div class="options-group">
       <label for="difficultySelect">Difficulty:</label>
       <select id="difficultySelect">
-        <option value="easy">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
+        <option value="easy">Easy</option> <!-- Longer flip time, more forgiving -->
+        <option value="medium">Medium</option> <!-- Balanced difficulty -->
+        <option value="hard">Hard</option> <!-- Shorter flip time, challenging -->
       </select>
     </div>
     <div class="options-group">
       <label for="pairsSelect">Number of Pairs:</label>
       <select id="pairsSelect">
-        <option value="6">6 Pairs</option>
-        <option value="8">8 Pairs</option>
-        <option value="10">10 Pairs</option>
+        <option value="6">6 Pairs</option> <!-- Small grid, shorter game -->
+        <option value="8">8 Pairs</option> <!-- Medium grid, moderate game length -->
+        <option value="10">10 Pairs</option> <!-- Large grid, longer game -->
       </select>
     </div>
-    <button class="start-button" id="startGameButton">Start Game</button>
+    <button class="start-button" id="startGameButton">Start Game</button> <!-- Initializes game with selected options -->
   </div>
 
+  <!-- Main game area - hidden until Start Game is clicked -->
   <main>
     <div class="card-grid" id="cardGrid" style="display: none;">
       <!-- Cards will be dynamically inserted by JavaScript -->
     </div>
   </main>
 
+  <!-- Game script handles card generation, flipping mechanics, match detection, and scoring -->
   <script src="game.js"></script>
 </body>
 </html>
