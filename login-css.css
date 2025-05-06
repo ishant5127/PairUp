@@ -1,4 +1,4 @@
-/* General styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@
     padding: 20px;
   }
   
-  /* Login container */
+  
   .container {
     width: 100%;
     max-width: 400px;
@@ -54,7 +54,7 @@
     }
   }
   
-  /* Card icon animation */
+  
   .card-icon {
     width: 80px;
     height: 110px;
@@ -103,7 +103,7 @@
     box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
   }
   
-  /* Typography */
+  
   h1 {
     font-size: 1.8rem;
     font-weight: 600;
@@ -119,7 +119,7 @@
     color: rgba(255, 255, 255, 0.8);
   }
   
-  /* Form styling */
+ 
   form {
     text-align: left;
   }
@@ -230,7 +230,7 @@
     display: none;
   }
   
-  /* Animation utilities */
+
   @keyframes shake {
     0%, 100% { transform: translateX(0); }
     10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
@@ -241,7 +241,7 @@
     animation: shake 0.5s;
   }
   
-  /* Responsive design */
+  
   @media (max-width: 480px) {
     .container {
       padding: 30px 20px;

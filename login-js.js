@@ -9,21 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
       loginForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Clear previous errors
+        
         errorMessage.style.display = 'none';
         
-        // Get input values
         const username = usernameInput.value.trim();
         const password = passwordInput.value.trim();
         
-        // Simple validation
         if (!username || !password) {
           showError('Please enter both username and password');
           return;
         }
         
         try {
-          // First try to find the user in the individual user record
           const userKey = 'user_' + username;
           const userDataJson = localStorage.getItem(userKey);
           
