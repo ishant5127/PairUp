@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const username = usernameInput.value.trim();
         const password = passwordInput.value.trim();
         
-        // Simple validation
         if (!username || !password) {
           showError('Please enter both username and password');
           return;
