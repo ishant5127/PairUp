@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
           }
           
-          // If we get here, login failed
+    
           showError('Invalid username or password');
           
         } catch (error) {
